@@ -95,6 +95,9 @@ class MyCanvasView(context: Context) : View(context) {
         invalidate()
     }
 
-    private fun touchUp() {}
+    private fun touchUp() {
+        // Reset the path so it doesn't get drawn again.
+        path.reset()
+    }
 
 }
