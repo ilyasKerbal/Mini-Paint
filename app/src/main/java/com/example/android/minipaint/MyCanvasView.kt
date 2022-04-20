@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Path
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.res.ResourcesCompat
@@ -25,6 +26,9 @@ class MyCanvasView(context: Context) : View(context) {
 
     private var motionTouchEventX = 0f
     private var motionTouchEventY = 0f
+
+    private var currentX = 0f
+    private var currentY = 0f
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
@@ -67,7 +71,12 @@ class MyCanvasView(context: Context) : View(context) {
         return true
     }
 
-    private fun touchStart() {}
+    private fun touchStart() {
+        path.reset()
+        path.moveTo(motionTouchEventX, motionTouchEventY)
+        currentX = motionTouchEventX
+        currentY = motionTouchEventY
+    }
 
     private fun touchMove() {}
 
