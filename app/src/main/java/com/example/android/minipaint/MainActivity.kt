@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val myCanvasView : MyCanvasView = MyCanvasView(this)
+        val myCanvasView : MyCanvasView2 = MyCanvasView2(this)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         myCanvasView.contentDescription = getString(R.string.canvasContentDescription)
         setContentView(myCanvasView)
